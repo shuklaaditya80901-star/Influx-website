@@ -1,7 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -15,52 +16,59 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
+/* Custom Teal Colors */
 .bg-teal-50 {
-  background-color: #f0fdfa;
+  background-color: #f0fdfa !important;
 }
 
 .bg-teal-600 {
-  background-color: #0d9488;
+  background-color: #0d9488 !important;
 }
 
 .hover\:bg-teal-700:hover {
-  background-color: #0f766e;
+  background-color: #0f766e !important;
 }
 
 .text-teal-600 {
-  color: #0d9488;
+  color: #0d9488 !important;
 }
 
 .border-teal-600 {
-  border-color: #0d9488;
+  border-color: #0d9488 !important;
 }
 
 .hover\:bg-teal-50:hover {
-  background-color: #f0fdfa;
+  background-color: #f0fdfa !important;
 }
 
+.hover\:border-teal-400:hover {
+  border-color: #2dd4bf !important;
+}
+
+/* Gradient Background */
+.bg-gradient-to-br {
+  background: linear-gradient(135deg, #f0fdfa 0%, #dbeafe 100%);
+}
+
+/* Transitions */
 .transition-colors {
-  transition-property: color, background-color, border-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
 .transition-shadow {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition: box-shadow 0.15s ease-in-out;
 }
 
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-}
-
+/* Backdrop Blur */
 .backdrop-blur-sm {
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
+/* Logo Filters */
 .brightness-0 {
   filter: brightness(0);
 }
@@ -69,12 +77,43 @@ body {
   filter: invert(1);
 }
 
+/* Shadows */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Typography */
 @media (max-width: 768px) {
   .text-5xl {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
   }
   
   .text-6xl {
-    font-size: 3rem;
+    font-size: 3rem !important;
   }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Form Styles */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
